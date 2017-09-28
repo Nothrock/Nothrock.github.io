@@ -1,0 +1,168 @@
+@keyframes PictureSpin {
+  0% {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    }
+  100% {
+    -webkit-transform: rotateY(360deg);
+    -moz-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
+    -o-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes ShadowSquish {
+  0% {
+    width: 21em;
+  }
+  50% {
+    width: 2em;
+  }
+  100% {
+    width: 21em;
+  }
+}
+
+body {
+	color: #464646;
+	max-width: 1200px;
+	margin: auto;
+	padding: 20px;
+}
+
+li {
+	list-style: none;
+	margin: 10px 0;
+}
+
+body > * {
+	padding: 2em 0 2em 0;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-bottom: solid;
+  perspective: 700px;
+}
+
+header h1 {
+	border-bottom: solid;
+	padding: 0 2em;
+	margin-bottom: 5px;
+}
+
+header p {
+	margin-top: 0;
+}
+
+main img {
+	width: 20em;
+	border-radius: 50%;
+	border: solid;
+  transform-origin: 50%;
+  position: relative;
+/*   box-shadow: 2px 8px 10px 3px rgba(0, 0, 0, 0.3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);  */
+}
+
+main span:hover img {
+  animation: PictureSpin 10s infinite linear;
+  animation-name: PictureSpin;
+}
+
+main span:before {
+  content: "";
+  position: absolute;
+  height: 70%;
+  width: 20em;
+  background: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3), transparent, transparent);
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main span:hover:before {
+  animation: ShadowSquish 5s infinite linear;
+  animation-name: ShadowSquish;
+}
+
+section ul {
+	display: flex;
+	flex-flow: row wrap;
+	align-content: center;
+  justify-content: center;
+  padding: 0;
+}
+
+section ul a {
+	margin: 10px;
+}
+
+section ul a:nth-child(1) {
+
+}
+
+section li {
+  background-color: lightblue;
+  height: 50vh;
+  flex: 23%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section li:nth-child(1) {
+  background: url("https://static.pexels.com/photos/2154/sky-lights-space-dark.jpg") center;
+}
+
+section li:nth-child(2) {
+  background-color: #45A0B9;
+}
+
+section li:nth-child(3) {
+  background-color: #59C9A5;
+}
+
+section li:nth-child(4) {
+  background-color: #7DCFB6;
+}
+
+section li a {
+	font-size:18px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 25px;
+}
+
+
+aside:nth-of-type(2) {
+	border-left: dashed;
+	padding-left: 20px;
+}
+
+footer li:first-child::before {
+	content: "email: "
+}
+
+footer li:nth-child(2)::before {
+	content: "github: "
+}
+
+footer li:last-child::before {
+	content: "phone: "
+}
+
+footer {
+	border-bottom: solid;
+	margin-bottom: 2em;
+}
